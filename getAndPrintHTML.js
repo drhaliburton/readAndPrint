@@ -13,12 +13,14 @@ function getAndPrintHTMLChunks () {
 
     response.setEncoding('utf8');
     response.on('data', function (data) {
-      console.log('Chunk:', data + '\n');
+      var dataResult = "";
+      for (var i = 0; i < data.length; i++) {
+        dataResult += data[i];
+      }
+      console.log(dataResult);
     });
 
   });
 }
-
-
 
 getAndPrintHTMLChunks();
